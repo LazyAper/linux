@@ -12,7 +12,7 @@ sudo apt install htop -y
 sudo apt install cpulimit -y
 sudo apt install ncdu -y
 
-;======================== NODE_EXPORTER ========================================================================
+#======================== NODE_EXPORTER ========================================================================
 sudo useradd --no-create-home --shell /bin/false node_exporter;wget https://github.com/prometheus/node_exporter/releases/download/v1.2.0/node_exporter-1.2.0.linux-amd64.tar.gz;tar -xvzf node_exporter-1.2.0.linux-amd64.tar.gz;sudo cp node_exporter-1.2.0.linux-amd64/node_exporter /usr/local/bin/;sudo chmod 755 /usr/local/bin/node_exporter
 rm node_exporter-1.2.0.linux-amd64.tar.gz
 
@@ -32,4 +32,4 @@ WantedBy=default.target
 EOF
 
 sudo systemctl daemon-reload;sudo systemctl start node_exporter;sudo systemctl enable node_exporter;
-;=============================================================================================================
+#=============================================================================================================
