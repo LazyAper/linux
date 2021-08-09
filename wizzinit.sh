@@ -11,9 +11,14 @@ sudo apt-get update && sudo apt-get upgrade -y
 sudo apt install htop -y
 sudo apt install cpulimit -y
 sudo apt install ncdu -y
+sudo timedatectl set-timezone Asia/Krasnoyarsk
 
 #======================== NODE_EXPORTER ========================================================================
-sudo useradd --no-create-home --shell /bin/false node_exporter;wget https://github.com/prometheus/node_exporter/releases/download/v1.2.0/node_exporter-1.2.0.linux-amd64.tar.gz;tar -xvzf node_exporter-1.2.0.linux-amd64.tar.gz;sudo cp node_exporter-1.2.0.linux-amd64/node_exporter /usr/local/bin/;sudo chmod 755 /usr/local/bin/node_exporter
+sudo useradd --no-create-home --shell /bin/false node_exporter
+wget https://github.com/prometheus/node_exporter/releases/download/v1.2.0/node_exporter-1.2.0.linux-amd64.tar.gz
+tar -xvzf node_exporter-1.2.0.linux-amd64.tar.gz
+sudo cp node_exporter-1.2.0.linux-amd64/node_exporter /usr/local/bin/
+sudo chmod 755 /usr/local/bin/node_exporter
 rm node_exporter-1.2.0.linux-amd64.tar.gz
 
 sudo tee <<EOF >/dev/null /etc/systemd/system/node_exporter.service
